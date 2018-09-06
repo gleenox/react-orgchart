@@ -4,7 +4,10 @@ var React = require('react');
 
 var OrgChart = function OrgChart(_ref) {
   var tree = _ref.tree,
-      NodeComponent = _ref.NodeComponent;
+      NodeComponent = _ref.NodeComponent,
+      props = _ref.props;
+
+  console.log("react org chart ref");
 
 
   var renderChildren = function renderChildren(node) {
@@ -77,7 +80,7 @@ var OrgChart = function OrgChart(_ref) {
           React.createElement(
             "td",
             { className: "nodeCell", colSpan: (node.children || []).length * 2 },
-            React.createElement(NodeComponent, { node: node })
+            React.createElement(NodeComponent, { props, node: node })
           )
         ),
         React.createElement(
@@ -102,7 +105,7 @@ var OrgChart = function OrgChart(_ref) {
   return React.createElement(
     "div",
     { className: "reactOrgChart" },
-    renderChildren(tree)
+    renderChildren(tree, props)
   );
 };
 
