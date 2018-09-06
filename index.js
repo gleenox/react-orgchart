@@ -7,8 +7,6 @@ var OrgChart = function OrgChart(_ref) {
       NodeComponent = _ref.NodeComponent,
       props = _ref.props;
 
-  console.log("react org chart ref");
-
 
   var renderChildren = function renderChildren(node) {
 
